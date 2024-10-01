@@ -1,0 +1,80 @@
+# Descarte archivos creados por el sistema
+/.idea/
+.vscode/
+.DS_Store
+
+# Descarte archivos de caché y temporales
+.cache/
+temp/
+*.swp
+
+# Descarte archivos de compilación
+build/
+dist/
+
+# Descarte archivos de configuración local
+.env
+.env.*
+
+# Descarte archivos de logs
+logs/
+
+# Descarte archivos de base de datos
+db.sqlite3
+*.sqlite
+
+# Descarte archivos de pruebas
+tests/
+*.pyc
+*.pyo
+
+# Descarte archivos de la base de datos
+*.xlsx
+*.pdf
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.dll
+*.pyd
+
+# Distribution / packaging
+.eggs/
+dist/
+build/
+build/lib/
+build/scripts/
+setup.py[co]
+MANIFEST
+
+# Local configuration
+*.ini
+*.cfg
+*.env
+*.yaml
+
+# PyInstaller cache
+# http://www.pyinstaller.org/usage.html#spec-files
+*.spec
+
+# Installer logs
+pip-log.txt
+
+# Unit test/coverage reports
+*.log
+coverage/
+htmlcov/
+
+# Django
+local_settings.py
+
+
+# IDE files
+*.pyproj
+*.suo
+*.sln
+*.xcodeproj
