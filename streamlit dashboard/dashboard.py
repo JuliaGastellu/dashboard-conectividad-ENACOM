@@ -14,7 +14,7 @@ st.sidebar.title('Filtros')
 Provincias = sorted(list(mapa_conectividad['Provincia'].unique()))
 
 # Crear dos columnas
-col1, col2 = st.columns([1, 1])  # La primera columna ocupa 3 unidades y la segunda 1 
+col1, col2 = st.columns([1, 1])
 
 def crear_grafico(df, provincia):
     
@@ -24,8 +24,8 @@ def crear_grafico(df, provincia):
                         lat='Latitud',
                         lon='Longitud',
                         scope='south america',
-                        color='Población',  # Color según el porcentaje conectado
-                        color_continuous_scale='Viridis',  # Escala de colores
+                        color='Población',  
+                        color_continuous_scale='Viridis', 
                         size='Población',
                         hover_name='Provincia',
                         hover_data=['Población'],
