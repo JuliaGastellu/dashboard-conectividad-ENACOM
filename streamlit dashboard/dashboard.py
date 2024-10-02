@@ -5,11 +5,15 @@ import grafico_mapa as graf1
 
 st.set_page_config(layout='wide')
 
+<<<<<<< HEAD
 mapa_conectividad = pd.read_csv('https://raw.githubusercontent.com/JuliaGastellu/dashboard-conectividad-ENACOM/JuliaGastellu/data/mapa_conectividad.csv')
 
 
 
 #mapa_conectividad = pd.read_csv("C:/Users/jugas/Proyecto_PIDA/dashboard-conectividad-ENACOM/data/mapa_conectividad.csv")
+=======
+mapa_conectividad = pd.read_csv("data/mapa_conectividad.csv")
+>>>>>>> 7c9652fb1b29fa6aa8b595961c833ad37212a662
 
 st.sidebar.title('Filtros')
 
