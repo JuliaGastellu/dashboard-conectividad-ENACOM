@@ -141,29 +141,70 @@ fig = px.line(
 # Mostrar el gráfico
 st.plotly_chart(fig)
 
-# Lista de tecnologías para el selector (ajusta la expresión regular si es necesario)
-tecnologias = mapa_conectividad.filter(regex='^(ADSL|Cablemódem|Dial Up|Fibra óptica|Satelital|Wireless|Telefonía Fija|3G|4G).*')
+# Crear una tabla pivote
+tecnologias = ['ADSL', 'Cablemódem', 'Dial Up', 'Fibra óptica', 'Satelital', 'Wireless', 'Telefonía Fija', '3G', '4G']
+df_tecnologias = mapa_conectividad[['Provincia'] + tecnologias]
 
-# Agregar un selector a la sidebar
-tecnologia_seleccionada = st.sidebar.selectbox('Selecciona una tecnología', tecnologias.columns)
+# Crear una tabla pivot para sumar los valores booleanos por provincia y tecnología
+tabla_pivot = pd.pivot_table(df_tecnologias, values=tecnologias, index='Provincia', aggfunc='sum')
 
-# Crear un DataFrame para almacenar los conteos de accesos
-df_conteos = mapa_conectividad.groupby('Provincia')[tecnologia_seleccionada].sum().reset_index()
+# Crear una tabla pivote
+#tabla_pivot = mapa_conectividad.pivot_table(index='Provincia', columns='tecnologia_seleccionada', values='cantidad_accesos', aggfunc='sum')
 
-# Crear un gráfico de barras con Plotly
+colors = px.colors.qualitative.G10  # Paleta de 10 colores
+
+# Crear el gráfico de barras apiladas con Plotly
 fig = go.Figure(data=[
     go.Bar(
-        name=tecnologia_seleccionada,
-        x=df_conteos['Provincia'],
-        y=df_conteos[tecnologia_seleccionada]
-    )
+        name=col,
+        x=tabla_pivot.index,
+        y=tabla_pivot[col],
+        marker_color=colors[i]  # Asigna un color de la lista a cada barra
+    ) for i, col in enumerate(tabla_pivot.columns)
 ])
 
+# Personalizar el gráfico
 fig.update_layout(
-    title=f'Accesos de {tecnologia_seleccionada} por provincia',
+    title='Distribución de tecnologías por provincia',
     xaxis_title='Provincia',
-    yaxis_title='Cantidad de accesos'
+    yaxis_title='Cantidad de localidades'
 )
 
-# Mostrar el gráfico en Streamlit
+# Mostrar el gráfico
+fig.show()
+
+st.plotly_chart(fig)
+
+tabla_pivot = mapa_conectividad.groupby('Provincia')[tecnologias + ['Población']].sum()
+
+# Crear un gráfico de barras apiladas con Plotly
+fig = go.Figure(data=[
+    go.Bar(
+        name=col,
+        x=tabla_pivot.index,
+        y=tabla_pivot[col],
+        marker_color=colors[i]
+    ) for i, col in enumerate(tecnologias)
+])
+
+# Agregar una traza adicional para la población total
+fig.add_trace(go.Bar(
+    name='Población Total',
+    x=tabla_pivot.index,
+    y=tabla_pivot['Población'],
+    marker_color='black'
+))
+
+# Personalizar el gráfico
+fig.update_layout(
+    title='Población con acceso a cada tecnología por provincia',
+    xaxis_title='Provincia',
+    yaxis_title='Población',
+    barmode='stack'  # Asegurarse de que las barras estén apiladas
+)
+
+# Mostrar el gráfico
+fig.show()
+
+
 st.plotly_chart(fig)
