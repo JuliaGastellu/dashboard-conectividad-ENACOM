@@ -17,7 +17,7 @@ penetracion_totales = pd.read_csv('https://raw.githubusercontent.com/JuliaGastel
 st.sidebar.title('Filtros')
 
 
-# Obtener los años únicos y provincias únicas (si existen)
+# Obtener los años únicos y provincias únicas 
 años_unicos = penetracion_hogares['Año'].unique() if 'Año' in penetracion_hogares.columns else None
 provincias_unicas = sorted(list(mapa_conectividad['Provincia'].unique())) if 'Provincia' in mapa_conectividad.columns else None
 
@@ -76,7 +76,6 @@ def crear_grafico(df, provincia):
     return fig
 
 # Crear el gráfico de mapa
-#provincia_seleccionada = st.selectbox("Selecciona una provincia", Provincias)
 graf_mapa = crear_grafico(mapa_conectividad, provincia_seleccionada)
 
 with col1: 
@@ -84,8 +83,6 @@ with col1:
   # Obtener los años únicos del DataFrame
 años_unicos = penetracion_hogares['Año'].unique()
 
-# Crear un widget de selección para el año
-#año_seleccionado = st.sidebar.selectbox('Selecciona un año', años_unicos)
 
 # Filtrar los datos por año seleccionado
 df_filtrado = penetracion_hogares[penetracion_hogares['Año'] == año_seleccionado]
@@ -116,7 +113,7 @@ df_filtrado = penetracion_hogares[penetracion_hogares['Año'] == año_selecciona
 df_agrupado = df_filtrado.groupby('Provincia')['Accesos por cada 100 hogares'].mean().reset_index()
 
 def crear_grafico2(df, color_column="Provincia"):
-    fig = px.bar(  # Cambiamos a un gráfico de barras para mejor visualización
+    fig = px.bar(  
         df,
         x="Provincia",
         y="Accesos por cada 100 hogares",
