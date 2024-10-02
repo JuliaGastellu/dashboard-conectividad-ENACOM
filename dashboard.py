@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import requests
 import plotly.express as px
+import plotly.graph_objects as go
 
 
 st.set_page_config(layout='wide')
@@ -138,4 +139,31 @@ fig = px.line(
 )
 
 # Mostrar el gráfico
+st.plotly_chart(fig)
+
+# Lista de tecnologías para el selector (ajusta la expresión regular si es necesario)
+tecnologias = mapa_conectividad.filter(regex='^(ADSL|Cablemódem|Dial Up|Fibra óptica|Satelital|Wireless|Telefonía Fija|3G|4G).*')
+
+# Agregar un selector a la sidebar
+tecnologia_seleccionada = st.sidebar.selectbox('Selecciona una tecnología', tecnologias.columns)
+
+# Crear un DataFrame para almacenar los conteos de accesos
+df_conteos = mapa_conectividad.groupby('Provincia')[tecnologia_seleccionada].sum().reset_index()
+
+# Crear un gráfico de barras con Plotly
+fig = go.Figure(data=[
+    go.Bar(
+        name=tecnologia_seleccionada,
+        x=df_conteos['Provincia'],
+        y=df_conteos[tecnologia_seleccionada]
+    )
+])
+
+fig.update_layout(
+    title=f'Accesos de {tecnologia_seleccionada} por provincia',
+    xaxis_title='Provincia',
+    yaxis_title='Cantidad de accesos'
+)
+
+# Mostrar el gráfico en Streamlit
 st.plotly_chart(fig)
