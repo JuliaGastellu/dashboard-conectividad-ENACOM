@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import requests
 import plotly.express as px
-import grafico_mapa as graf1
-
 
 
 st.set_page_config(layout='wide')
@@ -18,18 +16,11 @@ Provincias = sorted(list(mapa_conectividad['Provincia'].unique()))
 # Crear dos columnas
 col1, col2 = st.columns([1, 1])  # La primera columna ocupa 3 unidades y la segunda 1 
 
-
-def crear_grafico(df):
-    # Agrupar y calcular estadísticas
-    df_mapa = mapa_conectividad.groupby('Provincia').agg({
-        'Población': 'sum',
-        'Latitud': 'mean',
-        'Longitud': 'mean',
-      
-    }).reset_index()
-
-    # Crear el mapa
-    fig = px.scatter_geo(df_mapa,
+def crear_grafico(df, provincia):
+    
+    df_filtrado = mapa_conectividad[mapa_conectividad['Provincia'].isin([provincia])]
+    
+    fig = px.scatter_geo(df_filtrado,
                         lat='Latitud',
                         lon='Longitud',
                         scope='south america',
@@ -55,10 +46,11 @@ def crear_grafico(df):
 
     return fig
 
-# En la primera columna, mostrar el mapa
+# Crear el gráfico de mapa
+provincia_seleccionada = st.selectbox("Selecciona una provincia", Provincias)
+graf_mapa = crear_grafico(mapa_conectividad, provincia_seleccionada)
+
 with col1: 
-    
-    graf_mapa = graf1.crear_grafico(mapa_conectividad)
     st.plotly_chart(graf_mapa, use_container_width=True)
    
 
@@ -74,16 +66,13 @@ df_filtrado = penetracion_hogares[penetracion_hogares['Año'] == año_selecciona
 # Agrupar los datos por Provincia y calcular el promedio
 df_agrupado = df_filtrado.groupby('Provincia')['Accesos por cada 100 hogares'].mean().reset_index()
 
-# Función para crear el gráfico de líneas (simplificada)
 def crear_grafico2(df, color_column="Provincia"):
-    fig = px.scatter(
+    fig = px.bar(  # Cambiamos a un gráfico de barras para mejor visualización
         df,
         x="Provincia",
         y="Accesos por cada 100 hogares",
         color=color_column,
-        size="Accesos por cada 100 hogares",
-        hover_name="Provincia",
-        title=f"Evolución de la penetración de hogares en {año_seleccionado}"
+        title=f"Penetración de hogares en {año_seleccionado}"
     )
     return fig
 
@@ -92,3 +81,4 @@ graf_lineas = crear_grafico2(df_agrupado, color_column="Provincia")
 
 with col2:
     st.plotly_chart(graf_lineas)
+
