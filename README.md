@@ -3,6 +3,85 @@
 Este estudio se propone analizar en profundidad la conectividad a internet en Argentina. A través del procesamiento de datos públicos, se busca cuantificar la penetración del servicio, caracterizar las tecnologías utilizadas, evaluar la calidad de las conexiones y, finalmente, identificar las brechas digitales existentes entre las distintas regiones del país. Los resultados obtenidos servirán como base para comprender el estado actual de la conectividad y proponer estrategias para mejorar el acceso y la calidad del servicio a nivel nacional.
 
 
+## Instalación y requisitos
+
+1. Clonar el repositorio
+
+```bash
+  git clone https://github.com/JuliaGastellu/dashboard-conectividad-ENACOM.git
+```
+2. Crear un entorno virtual:
+
+```bash
+  python -m venv entorno_virtual
+```
+3. Activar el entorno virtual: 
+
+```bash
+  Windows: entorno_virtual\Scripts\activate
+  macOS/Linux: source venv/bin/activate
+
+```
+4. Instalación las dependencias:
+
+```bash
+  pip install -r requirements.txt
+```
+
+## Estructura del proyecto
+
+El proyecto se encuentra organizado en las siguientes secciones:
+
+Data: Contiene los archivos procesados en formato csv.
+
+Notebooks: Incluye los notebooks utilizados para la limpieza, transformación y preparación de los datos para el análisis.
+
+Proceso de extracción, transformación y carga (ETL_PIDA): Contiene los notebooks con el código y resultados del proceso de limpieza de los datos crudos.
+
+Análisis Exploratorio de Datos (EDA_PIDA): Contiene los notebooks con el código y resultados del análisis exploratorio, incluyendo la creación de los KPIs clave.
+
+Visualizaciones: Incluye el archivo correspondiente al dashboard interactivo.
+
+Documentación: Este archivo README.md proporciona una descripción detallada del proyecto, su objetivo y las tecnologías utilizadas.
+## Metodología del Proyecto
+
+Para el desarrollo de este proyecto se han utilizado las siguientes herramientas:
+
+Visual Studio Code: Entorno de desarrollo integrado (IDE) para la edición de código, depuración y gestión de proyectos.
+
+GitHub: Plataforma de control de versiones para el seguimiento de cambios, colaboración en equipo y almacenamiento del código fuente.
+
+Git Bash: Interfaz de línea de comandos para interactuar con Git y gestionar el repositorio.
+## Estructura del proyecto
+
+El proyecto se encuentra organizado en las siguientes secciones:
+
+Data: Contiene los archivos procesados en formato csv.
+
+Notebooks: Incluye los notebooks utilizados para la limpieza, transformación y preparación de los datos para el análisis.
+
+Proceso de extracción, transformación y carga (ETL_PIDA): Contiene los notebooks con el código y resultados del proceso de limpieza de los datos crudos.
+
+Análisis Exploratorio de Datos (EDA_PIDA): Contiene los notebooks con el código y resultados del análisis exploratorio, incluyendo la creación de los KPIs clave.
+
+Visualizaciones: Incluye el archivo correspondiente al dashboard interactivo.
+
+Documentación: Este archivo README.md proporciona una descripción detallada del proyecto, su objetivo y las tecnologías utilizadas.
+## Proceso de Desarrollo
+
+El análisis exploratorio de datos (EDA) se llevó a cabo siguiendo una metodología rigurosa:
+
+Adquisición de datos: Los datos fuente se obtuvieron de [Datos abiertos ENACOM](https://www.enacom.gob.ar/datosabiertos) y se cargaron en un entorno de análisis de datos.
+
+Limpieza y preparación de datos: Se realizó una limpieza exhaustiva de los datos, incluyendo la eliminación de duplicados, la corrección de errores y la imputación de valores faltantes cuando correspondía.
+
+Análisis exploratorio: Se utilizaron técnicas estadísticas y visualizaciones para comprender la estructura de los datos, identificar patrones y detectar outliers.
+
+Análisis en profundidad: Se realizaron análisis específicos sobre la evolución de las diferentes tecnologías de acceso a internet, las diferencias regionales y la relación entre variables como la velocidad de conexión y el ingreso por hogar.
+
+Desarrollo de KPIs: Se definieron un conjunto de indicadores clave de desempeño (KPIs) para medir el estado y la evolución del mercado de acceso a internet en Argentina.
+
+Visualización: Los resultados del análisis se presentaron de forma clara y concisa mediante un dashboard interactivo.
 ## Dominancia Tecnológica y Transición Digital
 
 La fibra óptica se consolida como la tecnología predominante en las principales ciudades, impulsada por una mayor demanda de servicios de alta velocidad y la inversión de los proveedores de servicios. En contraposición, en las zonas rurales y pequeñas localidades, las tecnologías inalámbricas como el 4G y el 5G están ganando terreno, aunque con velocidades y capacidades más limitadas. 
@@ -80,5 +159,11 @@ KPI 3: Acceso a conexiones mayores a 20 Mbps: Este KPI permitirá evaluar el ava
 Objetivo: Aumentar en un 5% las conexiones mayores a 20 Mbps para las provincias que tienen baja     velocidad de conexión.
 
 Estos KPIs se encuentran alineados con nuestros objetivos estratégicos de expandir la infraestructura de telecomunicaciones, mejorar la calidad de los servicios y reducir la brecha digital.
+
+
+## Authors
+
+- [@JuliaGastellu](https://www.https://github.com/JuliaGastellu)
+
 
 
