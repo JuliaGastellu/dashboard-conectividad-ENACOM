@@ -39,4 +39,3 @@ def crear_grafico(df):
     )
 
     return fig
-
