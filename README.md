@@ -126,13 +126,12 @@ Las contribuciones son bienvenidas. Por favor, siga estos pasos:
 4. Push a la rama (`git push origin feature/NuevaFuncionalidad`)
 5. Abra un Pull Request
 
-## Licencia
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Contacto
 Mail: juliacgastellu@gmail.com
+LinkedIn: https://www.linkedin.com/in/julia-gastellu/
 
-Link del Proyecto: [https://github.com/tu-usuario/dashboard-conectividad-ENACOM](https://github.com/tu-usuario/dashboard-conectividad-ENACOM)
+Link del Proyecto: [https://github.com/tu-usuario/dashboard-conectividad-ENACOM](https://github.com/JuliaGastellu/dashboard-conectividad-ENACOM)
 
 
 
