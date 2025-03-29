@@ -1,7 +1,7 @@
 # Descarte archivos creados por el sistema
 /.idea/
-.vscode/
-.DS_Store
+/.vscode/
+/.DS_Store
 
 # Descarte archivos de caché y temporales
 .cache/
@@ -28,9 +28,10 @@ tests/
 *.pyc
 *.pyo
 
-# Descarte archivos de la base de datos
+# Descarte archivos de datos no deseados
 *.xlsx
 *.pdf
+*.csv
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -71,7 +72,6 @@ htmlcov/
 
 # Django
 local_settings.py
-
 
 # IDE files
 *.pyproj
