@@ -1,7 +1,7 @@
 # Dashboard de Conectividad ENACOM con Análisis Predictivo
 
 ## Descripción
-Este proyecto es una herramienta avanzada de análisis de datos y machine learning para visualizar y predecir la conectividad a internet en Argentina. Desarrollado para ENACOM (Ente Nacional de Comunicaciones), combina visualización interactiva con modelos predictivos para ofrecer una visión completa del estado actual y futuro de la conectividad en el país.
+Este proyecto es una herramienta avanzada de análisis de datos y machine learning para visualizar y predecir la conectividad a internet en Argentina. Utilizando datos públicos proporcionados por ENACOM (Ente Nacional de Comunicaciones), este proyecto personal combina visualización interactiva con modelos predictivos para ofrecer una visión completa del estado actual y futuro de la conectividad en el país. El objetivo es demostrar el potencial del análisis de datos y machine learning en el contexto de la conectividad digital.
 
 ## Características Principales
 
