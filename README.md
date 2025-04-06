@@ -230,7 +230,6 @@ Las contribuciones son bienvenidas. Por favor, siga estos pasos:
 Mail: juliacgastellu@gmail.com
 LinkedIn: https://www.linkedin.com/in/julia-gastellu/
 
-Link del Proyecto: [https://github.com/JuliaGastellu/dashboard-conectividad-ENACOM](https://github.com/JuliaGastellu/dashboard-conectividad-ENACOM)
 
 
 
