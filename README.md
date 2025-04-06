@@ -64,15 +64,18 @@ Este proyecto analiza y visualiza datos de conectividad a internet en Argentina,
 
 ## Requisitos
 Los requisitos del proyecto están especificados en `requirements.txt`. Las principales dependencias incluyen:
-- streamlit==1.32.0
-- pandas==2.2.0
-- numpy==1.26.3
-- plotly==5.18.0
-- scikit-learn==1.4.0
-- joblib==1.3.2
-- pyarrow==15.0.0
-- matplotlib==3.8.3
-- seaborn==0.13.2
+streamlit==1.32.0
+pandas==2.2.0
+numpy==1.26.3
+plotly==5.18.0
+scikit-learn==1.4.0
+joblib==1.3.2
+pyarrow==15.0.0
+matplotlib==3.8.3
+seaborn==0.13.2
+protobuf==3.20.3
+typing-extensions>=4.0.0
+packaging>=21.0
 
 ## Estructura de Directorios
 ```
