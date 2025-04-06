@@ -1,18 +1,30 @@
 # Dashboard de Conectividad ENACOM
 
+## 🚀 Dashboards en Línea
+
+### Dashboard Principal
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://dashboard-enacom.streamlit.app/)
+Explora el dashboard principal con visualizaciones interactivas de la conectividad en Argentina.
+
+### Dashboard de Machine Learning
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ml-dashboard-enacom.streamlit.app/)
+Descubre las predicciones y análisis avanzados de conectividad.
+
+---
+
 Este proyecto analiza y visualiza datos de conectividad a internet en Argentina, utilizando datos proporcionados por ENACOM (Ente Nacional de Comunicaciones).
 
 ## Estructura del Proyecto
 
 ### 1. ETL (Extract, Transform, Load)
-- **ETL.ipynb**: Notebook que contiene el proceso de extracción, transformación y carga de datos. Realiza las siguientes tareas:
+- **notebooks/ETL.ipynb**: Notebook que contiene el proceso de extracción, transformación y carga de datos. Realiza las siguientes tareas:
   - Carga los datos brutos de ENACOM
   - Limpia y transforma los datos
   - Crea datasets procesados en formato parquet
   - Genera datasets específicos para análisis de velocidad, penetración y tecnología
 
 ### 2. Análisis Exploratorio de Datos (EDA)
-- **EDA.ipynb**: Notebook que realiza el análisis exploratorio de los datos. Incluye:
+- **notebooks/EDA.ipynb**: Notebook que realiza el análisis exploratorio de los datos. Incluye:
   - Visualizaciones de tendencias temporales
   - Análisis de distribución de velocidades
   - Correlaciones entre variables
@@ -70,13 +82,13 @@ dashboard-conectividad-ENACOM/
 ├── notebooks/              # Notebooks de análisis
 │   ├── ETL.ipynb
 │   └── EDA.ipynb
-├── src/                    # Scripts Python
-│   ├── ml_analysis.py
-│   ├── modelo_velocidad.py
-│   ├── ml_dashboard.py
-│   └── dashboard.py
-├── requirements.txt        # Dependencias
-└── README.md              # Documentación
+├── .gitignore              # Archivo de exclusión de Git
+├── README.md               # Documentación
+├── dashboard.py            # Dashboard principal
+├── ml_analysis.py          # Análisis de machine learning
+├── ml_dashboard.py         # Dashboard de machine learning
+├── modelo_velocidad.py     # Modelo predictivo
+└── requirements.txt        # Dependencias
 ```
 
 ## Cómo Ejecutar
@@ -214,12 +226,11 @@ Las contribuciones son bienvenidas. Por favor, siga estos pasos:
 4. Push a la rama (`git push origin feature/NuevaFuncionalidad`)
 5. Abra un Pull Request
 
-
 ## Contacto
 Mail: juliacgastellu@gmail.com
 LinkedIn: https://www.linkedin.com/in/julia-gastellu/
 
-Link del Proyecto: [https://github.com/tu-usuario/dashboard-conectividad-ENACOM](https://github.com/JuliaGastellu/dashboard-conectividad-ENACOM)
+Link del Proyecto: [https://github.com/JuliaGastellu/dashboard-conectividad-ENACOM](https://github.com/JuliaGastellu/dashboard-conectividad-ENACOM)
 
 
 
