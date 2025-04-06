@@ -90,7 +90,7 @@ page = st.sidebar.radio('Seleccione una página:', ['Dashboard Principal', 'Aná
 
 if page == 'Dashboard Principal':
     st.title('🌐 Dashboard de Conectividad en Argentina')
-    
+
     # Filtros
     st.sidebar.title('Filtros')
     fecha_max = datos['Internet_Velocidad_Media_de_Descarga_Totales']['fecha'].max()
@@ -104,8 +104,8 @@ if page == 'Dashboard Principal':
     
     # KPIs principales
     col1, col2, col3 = st.columns(3)
-    
-    with col1:
+
+    with col1: 
         velocidad_actual = datos['Internet_Velocidad_Media_de_Descarga_Totales'][datos['Internet_Velocidad_Media_de_Descarga_Totales']['fecha'] == fecha_seleccionada]['mbps_(media_de_bajada)'].iloc[0]
         velocidad_anterior = datos['Internet_Velocidad_Media_de_Descarga_Totales'][datos['Internet_Velocidad_Media_de_Descarga_Totales']['fecha'] == fecha_seleccionada - pd.DateOffset(years=1)]['mbps_(media_de_bajada)'].iloc[0]
         cambio_velocidad = ((velocidad_actual - velocidad_anterior) / velocidad_anterior) * 100
@@ -136,7 +136,7 @@ if page == 'Dashboard Principal':
             labels={'mbps_(media_de_bajada)': 'Velocidad (Mbps)', 'fecha': 'Fecha'}
         )
         st.plotly_chart(fig_velocidad, use_container_width=True)
-    
+
     with col2:
         # Distribución de tecnologías
         datos_actuales = datos['Internet_Accesos_Tecnologia_Totales'][datos['Internet_Accesos_Tecnologia_Totales']['fecha'] == fecha_seleccionada]
