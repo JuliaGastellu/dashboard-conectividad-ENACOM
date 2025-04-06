@@ -1,4 +1,104 @@
-# Dashboard de Conectividad ENACOM con Análisis Predictivo
+# Dashboard de Conectividad ENACOM
+
+Este proyecto analiza y visualiza datos de conectividad a internet en Argentina, utilizando datos proporcionados por ENACOM (Ente Nacional de Comunicaciones).
+
+## Estructura del Proyecto
+
+### 1. ETL (Extract, Transform, Load)
+- **ETL.ipynb**: Notebook que contiene el proceso de extracción, transformación y carga de datos. Realiza las siguientes tareas:
+  - Carga los datos brutos de ENACOM
+  - Limpia y transforma los datos
+  - Crea datasets procesados en formato parquet
+  - Genera datasets específicos para análisis de velocidad, penetración y tecnología
+
+### 2. Análisis Exploratorio de Datos (EDA)
+- **EDA.ipynb**: Notebook que realiza el análisis exploratorio de los datos. Incluye:
+  - Visualizaciones de tendencias temporales
+  - Análisis de distribución de velocidades
+  - Correlaciones entre variables
+  - Estadísticas descriptivas
+  - Identificación de patrones y outliers
+
+### 3. Análisis de Machine Learning
+- **ml_analysis.py**: Script que realiza el análisis de machine learning. Contiene:
+  - Preparación de datos para modelado
+  - Evaluación de diferentes algoritmos
+  - Optimización de hiperparámetros
+  - Generación de métricas de rendimiento
+  - Visualización de resultados
+
+### 4. Modelo de Velocidad
+- **modelo_velocidad.py**: Script que implementa el modelo predictivo de velocidad de internet. Incluye:
+  - Carga y preparación de datos
+  - Entrenamiento del modelo
+  - Evaluación del rendimiento
+  - Guardado del modelo y scaler
+  - Visualización de importancia de características
+
+### 5. Dashboards
+- **ml_dashboard.py**: Dashboard interactivo que muestra:
+  - Predicciones de velocidad
+  - Análisis de tendencias
+  - Visualizaciones de datos
+  - Simulador de velocidad
+  - Métricas de rendimiento del modelo
+
+- **dashboard.py**: Dashboard principal que muestra:
+  - KPIs de conectividad
+  - Evolución temporal de métricas
+  - Distribución por provincia
+  - Análisis de tecnología
+  - Comparativas y tendencias
+
+## Requisitos
+Los requisitos del proyecto están especificados en `requirements.txt`. Las principales dependencias incluyen:
+- streamlit==1.32.0
+- pandas==2.2.0
+- numpy==1.26.3
+- plotly==5.18.0
+- scikit-learn==1.4.0
+- joblib==1.3.2
+- pyarrow==15.0.0
+- matplotlib==3.8.3
+- seaborn==0.13.2
+
+## Estructura de Directorios
+```
+dashboard-conectividad-ENACOM/
+├── data/                    # Datos procesados
+├── models/                  # Modelos entrenados
+├── notebooks/              # Notebooks de análisis
+│   ├── ETL.ipynb
+│   └── EDA.ipynb
+├── src/                    # Scripts Python
+│   ├── ml_analysis.py
+│   ├── modelo_velocidad.py
+│   ├── ml_dashboard.py
+│   └── dashboard.py
+├── requirements.txt        # Dependencias
+└── README.md              # Documentación
+```
+
+## Cómo Ejecutar
+1. Instalar dependencias:
+```bash
+pip install -r requirements.txt
+```
+
+2. Ejecutar el dashboard principal:
+```bash
+streamlit run dashboard.py
+```
+
+3. Ejecutar el dashboard de ML:
+```bash
+streamlit run ml_dashboard.py
+```
+
+## Notas Adicionales
+- Los datos se actualizan trimestralmente
+- El modelo de velocidad se reentrena automáticamente con nuevos datos
+- Los dashboards incluyen funcionalidades interactivas para análisis detallado
 
 ## Descripción
 Este proyecto es una herramienta avanzada de análisis de datos y machine learning para visualizar y predecir la conectividad a internet en Argentina. Utilizando datos públicos proporcionados por ENACOM (Ente Nacional de Comunicaciones), este proyecto personal combina visualización interactiva con modelos predictivos para ofrecer una visión completa del estado actual y futuro de la conectividad en el país. El objetivo es demostrar el potencial del análisis de datos y machine learning en el contexto de la conectividad digital.
@@ -79,18 +179,6 @@ pip install -r requirements.txt
 4. Ejecutar el dashboard:
 ```bash
 streamlit run dashboard.py
-```
-
-## Estructura del Proyecto
-```
-dashboard-conectividad-ENACOM/
-├── data/                   # Datos del proyecto
-├── notebooks/             # Jupyter notebooks para análisis
-├── images/               # Recursos visuales
-├── dashboard.py          # Dashboard principal
-├── ml_analysis.py        # Funciones de machine learning
-├── ml_dashboard.py       # Dashboard de machine learning
-└── requirements.txt      # Dependencias del proyecto
 ```
 
 ## Uso del Dashboard
